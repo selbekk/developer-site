@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'; form-action 'self'; base-uri 'self'">
+    <meta content="origin" name="referrer">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}Error{% endif %} &middot; {{ site.title }}</title>
+
+    <style type="text/css">{% capture error_sass %}{% include_relative css/error.scss %}{% endcapture %}{{ error_sass | scssify }}</style>
+    <style>
+    .error-postcard__front {
+      background: url('{% base64 img/postcards/ship_1_modda.jpg %}') no-repeat center center;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="error-postcard__front"></div>
+    <article class="error-postcard">
+      <div class="error-postcard__left">
+{{ content }}
+      </div>
+      <div class="error-postcard__right">
+        <ul class="error-postcard__address-list">
+          <li>End User</li>
+          <li>Failing page {{ page.status_code }}</li>
+          <li>Bring Developer</li>
+          <li>1337 The Internet</li>
+        </ul>
+      </div>
+      <svg class="error-postcard__stamp" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 210 210">
+        <path class="symbol-top" fill="#7bc144" d="M41.2,103.5c1.4-18.2,16.7-32.6,35.3-32.6s33.9,14.4,35.3,32.6h65.2c-1.5-37.8-32.6-68-70.8-68
+            c-38.2,0-69.3,30.2-70.8,68H41.2z"/>
+        <path class="symbol-bottom" fill="#bfc0c4" d="M111.8,109.1c-1.4,18.2-16.7,32.6-35.3,32.6s-33.9-14.4-35.3-32.6h-5.7c1.5,37.8,32.6,68,70.8,68
+            c38.2,0,69.3-30.2,70.8-68H111.8z"/>
+      </svg>
+
+    </article>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+/* ------------------------------------------------------- 
+*   # .ERROR PAGe
+*
+------------------------------------------------------- */
+html {
+    height: 100%;
+}
+body {
+    background-color: $background-dark;
+    min-height: 100%;
+}
+
+.error-postcard__front {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 630px;
+    height: 444px;
+
+    transform: rotateZ(3.14deg) translateX(-55%) translateY(-50%);
+
+    border: 1em solid white;
+}
+
+.error-postcard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 630px;
+    height: 444px;
+    transform: rotateZ(-3.14deg) translateX(-45%) translateY(-55%);
+
+    background-color: white;
+    border: 1em solid $bring-green;
+}
+
+.error-postcard__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 1em;
+
+    color: black;
+    //color: $white;
+    border-right: 1px dashed $background-dark;
+
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.error-postcard__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.error-postcard__address-list {
+    list-style-type: none;
+
+    position: absolute;
+    left: 1em;
+    right: 1em;
+    bottom: 4em;
+    margin: 1em;
+
+    li {
+        margin: 1em 0;
+        padding: 0 0 0.5em 0;
+        font-family: Monaco, Consolas, 'Lucida Console', monospace;
+        font-size: 12px;
+        font-weight: bold;
+        border-bottom: 1px solid $background-dark;
+    }
+}
+
+.error-postcard__stamp {
+    position: absolute;
+    top: 0em;
+    right: 0.5em;
+    width: 48px;
+    height: 48px;
+}
